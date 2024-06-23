@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBinaryTreeBalancer", "XBinaryTreeBalancer\XBinaryTreeBalancer.csproj", "{C5CC5798-D692-4DC8-BC05-5CF9B6B485C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBinaryTreeBalancer.Console", "XBinaryTreeBalancer.Console\XBinaryTreeBalancer.Console.csproj", "{8C1273CE-B5F2-4571-86FE-6BABE6216555}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C5CC5798-D692-4DC8-BC05-5CF9B6B485C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5CC5798-D692-4DC8-BC05-5CF9B6B485C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5CC5798-D692-4DC8-BC05-5CF9B6B485C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1273CE-B5F2-4571-86FE-6BABE6216555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1273CE-B5F2-4571-86FE-6BABE6216555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1273CE-B5F2-4571-86FE-6BABE6216555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1273CE-B5F2-4571-86FE-6BABE6216555}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

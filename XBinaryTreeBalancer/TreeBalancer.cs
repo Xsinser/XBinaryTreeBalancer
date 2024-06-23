@@ -16,13 +16,13 @@ namespace XBinaryTreeBalancer
                 return nodes[0];
 
             var baseNode = new Node();
-            int depthTree = Convert.ToInt32(Math.Log2(maxNodesCount));
+            int depthTree = (int)Math.Abs(Math.Log2(maxNodesCount));
             var numberOfNodesExceedingTree = maxNodesCount - Math.Pow(2, depthTree);
             var currentLayer = 1;
             Node[] currentNodes = new Node[maxNodesCount];
             Node[] tempNodes = new Node[maxNodesCount];
             currentNodes[0] = baseNode;
-            var currentLayerElementsCount = Math.Pow(2, currentLayer);
+            var currentLayerElementsCount = Math.Pow(2, currentLayer - 1);
             while (currentLayer <= depthTree)
             {
                 for (int i = 0; i < currentLayerElementsCount; i++)
@@ -40,14 +40,14 @@ namespace XBinaryTreeBalancer
 
                 currentNodes = tempNodes;
                 currentLayer++;
-                currentLayerElementsCount = Math.Pow(2, currentLayer);
+                currentLayerElementsCount = Math.Pow(2, currentLayer - 1);
             }
             List<Node> removedNodes = new List<Node>();
 
-            for (int i = (int)(maxNodesCount - numberOfNodesExceedingTree); i < currentLayerElementsCount; i++)
+            for (int i = (int)(maxNodesCount - numberOfNodesExceedingTree - 1); i < currentLayerElementsCount; i++)
                 removedNodes.Add(currentNodes[i]);
 
-            var firstRemovedItemIndex = (int)(maxNodesCount - numberOfNodesExceedingTree);
+            var firstRemovedItemIndex = (int)(maxNodesCount - numberOfNodesExceedingTree - 1);
             var iterator = firstRemovedItemIndex;
             foreach (var item in removedNodes)
             {
@@ -65,7 +65,7 @@ namespace XBinaryTreeBalancer
 
             for (int i = 0; i < maxNodesCount; i++)
                 currentNodes[i] = nodes[i];
-            
+
             return baseNode;
         }
     }
