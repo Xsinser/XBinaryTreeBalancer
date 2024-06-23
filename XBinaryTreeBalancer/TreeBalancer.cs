@@ -38,16 +38,18 @@ namespace XBinaryTreeBalancer
                     tempNodes[index + 1] = rightNode;
                 }
 
-                currentNodes = tempNodes;
                 currentLayer++;
                 currentLayerElementsCount = Math.Pow(2, currentLayer - 1);
+
+                for (int i = 0; i < currentLayerElementsCount; i++)
+                    currentNodes[i] = tempNodes[i];
             }
             List<Node> removedNodes = new List<Node>();
-
-            for (int i = (int)(maxNodesCount - numberOfNodesExceedingTree - 1); i < currentLayerElementsCount; i++)
+            //numberOfNodesExceedingTree * 2 - кол-во конечных точек
+            for (int i = (int)(maxNodesCount - (numberOfNodesExceedingTree * 2)); i < currentLayerElementsCount; i++)
                 removedNodes.Add(currentNodes[i]);
 
-            var firstRemovedItemIndex = (int)(maxNodesCount - numberOfNodesExceedingTree - 1);
+            var firstRemovedItemIndex = (int)(maxNodesCount - (numberOfNodesExceedingTree * 2));
             var iterator = firstRemovedItemIndex;
             foreach (var item in removedNodes)
             {
